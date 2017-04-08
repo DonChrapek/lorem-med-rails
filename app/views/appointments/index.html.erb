@@ -1,14 +1,19 @@
 <% if signed_in? %>
     <% @appointment.each do |s| %>
-        <ul>
-            <li><div><p>Termin wizyty: <%= s.start %></p>
-            <% if s.start > DateTime.now %>
-                <p><%= button_to 'Odwołaj wizytę', appointment_path(@appointment), method: :delete, data: { confirm: 'Jesteś pewien?' } %></p></div></li>
-            <% end %>
-        </ul>
+            <ul>
+                <% if s.user_id == current_user.id %>
+                    <li><div><p>Termin wizyty: <%= s.start %></p>
+                    <% if s.start > DateTime.now %>
+                        <p><%= button_to 'Odwołaj wizytę', appointment_path(@appointment), method: :delete, data: { confirm: 'Jesteś pewien?' } %></p></div></li>
+                    <% end %>
+                <% end %>
+            </ul>
     <% end %>
 <% else %>
     <h2 class="alert">Zaloguj się, aby zobaczyć swoje wizyty</h2>
     <%= render partial: 'sessions/form' %>
 <% end %>
+
+
+
 
