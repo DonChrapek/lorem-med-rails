@@ -1,7 +1,7 @@
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
- *
+ 
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+ 
+ body {
+     margin: 0;
+ }
+ 
+ #signed-info {
+     margin: 0;
+     padding: 0;
+     height: 10vh;
+ }
+ 
+ .signed-box {
+     width:30%;
+     display: inline-block;
+ }
+ 
+ header {
+     background-image: url('/assets/ekg-monitor.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     width: 100%;
+ }
+ 
+ h1, h2 {
+     color: white;
+     padding-left: 10vw;
+ }
+ 
+ h1 {
+     font-size: 4.5em;
+     padding-top: 17vh;
+ }
+ 
+ h2 {
+     font-size: 2em;
+     padding-bottom: 17vh;
+ }
+ 
+ nav {
+     width: 100%;
+ }
+ 
+ #nav-left {
+     width: 40%;
+     display: inline-block;
+ }
+ 
+ #nav-right {
+     width: 40%;
+     display: inline-block;
+     text-align: right;
+ }
+ 
+ a {
+     text-decoration: none;
+ }

@@ -8,13 +8,22 @@
 </head>
 <body>
 
+<header>
+  <h1>Lorem Med</h1>
+  <h2>We'll ipsum your disease</h2>
+</header>
 
- <% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <%= link_to 'Twoje wizyty', appointments_path %>
+<nav>
+  <ul id="nav-left">
+   <%= link_to 'Twoje wizyty', appointments_path %>
+   <%= link_to 'Our stuff', doctors_path %>
+  </ul>
+  <section id="nav-right">
+    <% if signed_in? %>
+      <div class="signed-box"><p>Signed in as: <%= current_user.email %></p></div>
+      <div class="signed-box"><%= button_to 'Sign out', sign_out_path, method: :delete %></div>
     <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
+      <div class="signed-box"><%= link_to 'Sign in', sign_in_path %></div>
     <% end %>
 
     <div id="flash">
@@ -22,6 +31,8 @@
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
     </div>
+</section>
+</nav>
 
 <%= yield %>
 
