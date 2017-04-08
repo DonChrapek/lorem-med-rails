@@ -1,0 +1,11 @@
+<h1>Get to meet our stuff</h1>
+
+
+
+
+    <% @doctor.each do |s| %>
+    <div class="lekarz_dane"><%= s.name %> - <%= s.specialization %></div>
+    <div class="lekarz opis"><%= s.info %></div>
+    <% end %>
+
+

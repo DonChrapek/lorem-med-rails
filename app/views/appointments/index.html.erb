@@ -1,0 +1,8 @@
+<h1>Twoje wizyty</h1>
+
+<% @appointment.each do |s| %>
+<ol>
+    <li><p>Termin wizyty: <%= s.start %></p>
+    <p>Lekarz: <%= s.doctor.name %> </p></li>
+</ol>
+<% end %>
