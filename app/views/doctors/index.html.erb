@@ -1,11 +1,12 @@
-<h1>Get to meet our stuff</h1>
-
-
-
-
+<% if signed_in? %>
+<h1 class="alert">Poznaj nasz wspaniały zespół!</h1>
     <% @doctor.each do |s| %>
-    <div class="lekarz_dane"><%= s.name %> - <%= s.specialization %></div>
-    <div class="lekarz opis"><%= s.info %></div>
+        <div class="lekarz_dane"><%= s.name %> - <%= s.specialization %></div>
+        <div class="lekarz opis"><%= s.info %></div>
     <% end %>
+<% else %>
+    <h2 class="alert">Zaloguj się by wyświetlić lekarzy</h2>
+    <%= render '/sessions/form' %>
+<% end %>
 
 
