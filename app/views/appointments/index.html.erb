@@ -1,8 +1,14 @@
 <h1>Twoje wizyty</h1>
 
+    
 <% @appointment.each do |s| %>
-<ol>
-    <li><p>Termin wizyty: <%= s.start %></p>
-    <p>Lekarz: <%= s.doctor.name %> </p></li>
-</ol>
+    <% if s.user_id == current_user.id %>
+        <ul>
+            <li><p>Termin wizyty: <%= s.start %></p>
+            <% if s.start > DateTime.now %>
+                <p><%= button_to 'Odwołaj wizytę', appointment_path(@appointment), method: :delete, data: { confirm: 'Jesteś pewien?' } %></p></li>
+            <% end %>
+        </ul>
+    <% end %>
 <% end %>
+
