@@ -2,7 +2,7 @@
     <div class="formularz-wizyta">
     <h3 class="alert">Umów nową wizytę</h3>
         <%= form_for @new_appointment do |f| %>
-            <%= f.date_select :start %><br/>
+            <%= f.date_select :start, {start_year: Date.today.year} %><br/>
             <%= f.time_select :start, {minute_step: 15, start_hour: 7, end_hour: 18}, :ignore_date => false %><br/>
             <%= f.collection_select(:doctor_id, Doctor.all, :id, :name ) %><br/>
             <%= f.hidden_field :user_id, :value => current_user.id %>

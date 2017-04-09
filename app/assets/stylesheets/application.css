@@ -155,3 +155,12 @@
    margin-left: 3vw;
    padding: 5px;
  }
+ 
+ #about {
+  background-color: grey;
+  padding: 5vh;
+ }
+ 
+ #about p {
+  padding: 2vw;
+ }
