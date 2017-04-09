@@ -1,14 +1,38 @@
 <% if signed_in? %>
-<div><h1 class="alert">Poznaj nasz wspaniały zespół!</h1></div>
+<div><h2 class="alert" align="center">Poznaj nasz wspaniały zespół!</h2></div>
+    <div class="team-container">
     <% @doctor.each do |s| %>
         <div class="lekarz">
-            <h3><%= s.name %> - <%= s.specialization %></h3>
+            <h3><%= s.name %> - <%= s.specialization %></h3><br/>
             <%= s.info %>
+            <%= button_to 'Pokaż profil', doctor_path(s.id) %>
         </div>
     <% end %>
+    </div>
 <% else %>
     <h2 class="alert">Zaloguj się by wyświetlić lekarzy</h2>
     <%= render '/sessions/form' %>
 <% end %>
 
 
+
+<footer>
+  <div class="contact-data">
+    <h2>Lorem Med inc.</h2>
+    <div class="address">Ipsum City<br>
+    Dolor Ave. 5 <br/>
+    10392 California
+    
+  </div>
+    
+    
+  </div>
+  <div class="contact-form">
+    <form>
+        <input type="text" id="name" placeholder="Imię i nazwisko"><br/>
+        <input type="email" id="email" placeholder="E-mail"><br/>
+        <input type="textarea" id="message" placeholder="Wiadomość"><br/>
+        <input type="submit">
+    </form>
+  </div>
+</footer>

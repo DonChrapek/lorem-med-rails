@@ -14,6 +14,10 @@
  *= require_self
  */
  
+ * {
+  box-sizing: border-box;
+ }
+ 
  .sign-form {
      width: 100%;
      margin: 0;
@@ -71,6 +75,10 @@
      margin: 0;
  }
  
+ h3 {
+  margin: 0;
+ }
+ 
  nav {
      width: 100%;
      background-color: #000080;
@@ -113,9 +121,10 @@
  
  footer {
      width: 100%;
-     position: absolute;
+     position: relative;
      bottom: 0;
      background-color: black;
+     padding-bottom: 5vh;
  }
  
  .contact-data {
@@ -123,26 +132,43 @@
      color: white;
      padding-left: 30px;
      line-height: 23px;
+     display: inline-block;
+     top: 0;
+     bottom: 0;
  }
  
- .contact-data h3 {
-     padding: 20px 0;
+ .contact-data h2 {
+     padding-bottom: 190px 0;
  }
  
  .contact-form {
-     width: 50%;
+     width: 45%;
      color: white;
+     display: inline-block;
+     text-align: right;
+     padding-top: 10px;
+ }
+ 
+ .contact-form input {
+  padding: 7px;
+  margin-top: 5px;
+  width: 20vw;
+ }
+ 
+ .contact-form input[type="textarea"] {
+  height: 125px;
  }
 
  .alert {
      color: black;
-     margin: 0;
+     margin: 20px 0 0 0;
      padding: 0;
      padding-left: 2vw;
  }
  
- .lekarz {
-     padding-left: 2vw;
+ #sekcja-wizyty {
+  width: 100%;
+  padding: 0 10vw;
  }
  
  .umow-wizyte-button {
@@ -154,6 +180,18 @@
  .formularz-wizyta {
    margin-left: 3vw;
    padding: 5px;
+   display: inline-block;
+   width:50%;
+   text-align: right;
+ }
+ 
+  .formularz-wizyta h3 {
+   margin-bottom: 15px;
+  }
+ 
+ .wizyty {
+   display: inline-block;
+   width:30%;
  }
  
  #about {
@@ -163,4 +201,17 @@
  
  #about p {
   padding: 2vw;
+ }
+ 
+ .team-container {
+  width: 100%;
+  margin-top: 40px;
+ }
+ 
+ .lekarz {
+     text-align: center;
+     margin: 35px 0;
+     width: 45%;
+     display: inline-block;
+     padding-left: 2vw;
  }

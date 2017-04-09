@@ -1,4 +1,20 @@
+<section id="sekcja-wizyty">
 <% if signed_in? %>
+    <!-- Lista wizyt -->
+    <div class="wizyty">
+        <h3 class="alert">Twoje wizyty</h3>
+        <% @appointment.each do |s| %>
+                <ul>
+                    <% if s.user_id == current_user.id %>
+                        <li><div><p>Termin wizyty: <%= s.start %></p>
+                        <% if s.start > DateTime.now %>
+                            <p><%= button_to 'Odwołaj wizytę', appointment_path(s), method: :edit %></p></div></li>
+                        <% end %>
+                    <% end %>
+                </ul>
+        <% end %>
+    </div>
+    <!-- Formularz do umawiania wizyty -->
     <div class="formularz-wizyta">
     <h3 class="alert">Umów nową wizytę</h3>
         <%= form_for @new_appointment do |f| %>
@@ -9,22 +25,31 @@
             <%= f.submit "Umów wizytę" %>
         <% end %>
     </div>
-    
-    <% @appointment.each do |s| %>
-            <ul>
-                <% if s.user_id == current_user.id %>
-                    <li><div><p>Termin wizyty: <%= s.start %></p>
-                    <% if s.start > DateTime.now %>
-                        <p><%= button_to 'Odwołaj wizytę', appointment_path(@appointment), method: :delete, data: { confirm: 'Jesteś pewien?' } %></p></div></li>
-                    <% end %>
-                <% end %>
-            </ul>
-    <% end %>
 <% else %>
     <h2 class="alert">Zaloguj się, aby zobaczyć swoje wizyty</h2>
     <%= render partial: 'sessions/form' %>
 <% end %>
+</section>
 
 
 
-
+<footer>
+  <div class="contact-data">
+    <h2>Lorem Med inc.</h2>
+    <div class="address">Ipsum City<br>
+    Dolor Ave. 5 <br/>
+    10392 California
+    
+  </div>
+    
+    
+  </div>
+  <div class="contact-form">
+    <form>
+        <input type="text" id="name" placeholder="Imię i nazwisko"><br/>
+        <input type="email" id="email" placeholder="E-mail"><br/>
+        <input type="textarea" id="message" placeholder="Wiadomość"><br/>
+        <input type="submit">
+    </form>
+  </div>
+</footer>

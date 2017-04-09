@@ -5,4 +5,5 @@ class Appointment < ActiveRecord::Base
     validates :start, presence: true
     validates :doctor_id, presence: true
     validates :user_id, presence: true
+    validates :doctor_id, uniqueness: { scope: :start }
 end

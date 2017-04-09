@@ -8,12 +8,5 @@ class DoctorsController < ApplicationController
         @doctor = Doctor.all
     end
     
-    
-    
-    private
-    def doctor_params
-        params.require(:doctors).permit(:id)
-    end
-    
 end
 
