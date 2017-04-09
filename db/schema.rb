@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20170408104631) do
     t.datetime "end"
     t.integer  "user_id"
     t.integer  "doctor_id"
+    t.string "doctor_name"
   end
 
   add_index "appointments", ["doctor_id"], name: "index_appointments_on_doctor_id"
+  add_index "appointments", ["doctor_name"], name: "index_appointments_on_doctor_name"
   add_index "appointments", ["user_id"], name: "index_appointments_on_user_id"
 
   create_table "doctors", force: :cascade do |t|
