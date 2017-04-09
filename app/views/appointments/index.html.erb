@@ -8,7 +8,7 @@
                     <% if s.user_id == current_user.id %>
                         <li><div><p>Termin wizyty: <%= s.start %></p>
                         <% if s.start > DateTime.now %>
-                            <p><%= button_to 'Odwołaj wizytę', appointment_path(s), method: :edit %></p></div></li>
+                            <p><%= button_to 'Odwołaj wizytę', appointment_path(s), method: :delete, data: {confirm: "Czy na pewno chcesz zrezygnować z wizyty?"} %></p></div></li>
                         <% end %>
                     <% end %>
                 </ul>
