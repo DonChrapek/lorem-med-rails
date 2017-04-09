@@ -1,0 +1,9 @@
+<h2 class="alert">Wybierz termin wizyty</h2>
+
+<div class="formularz-wizyta">
+    <%= form_for @appointment do |f| %>
+        <%= f.date_select :start %><br/>
+        <%= f.time_select :start, {minute_step: 15, start_hour: 7, end_hour: 18}, :ignore_date => false %><br/>
+        <%= f.submit "Umów wizytę" %>
+    <% end %>
+</div>

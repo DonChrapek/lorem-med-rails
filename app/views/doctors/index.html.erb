@@ -2,9 +2,9 @@
 <div><h1 class="alert">Poznaj nasz wspaniały zespół!</h1></div>
     <% @doctor.each do |s| %>
         <div class="lekarz">
-            <h3><%= s.name %></h3><%= s.specialization %>
+            <h3><%= s.name %> - <%= s.specialization %></h3>
             <%= s.info %>
-            <%= button_to 'Umów wizytę', appointments_path %>
+            <%= button_to 'Umów wizytę', appointments_path, :class => "umow-wizyte-button" %>
         </div>
     <% end %>
 <% else %>

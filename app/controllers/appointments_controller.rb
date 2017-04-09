@@ -11,9 +11,11 @@ class AppointmentsController < ApplicationController
     end
     
     def create
+        @appointment = Appointment.new
     end
     
     def new
+        @appointment = Appointment.new
     end
     
     
