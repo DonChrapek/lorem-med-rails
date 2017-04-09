@@ -9,4 +9,15 @@ class AppointmentsController < ApplicationController
         @appointment = Appointment.find(params[:id])
         @appointment.destroy
     end
+    
+    def create
+    end
+    
+    def new
+    end
+    
+    
+    private
+    def appointment_params
+    end
 end

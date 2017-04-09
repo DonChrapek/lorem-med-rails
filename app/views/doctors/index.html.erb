@@ -1,8 +1,11 @@
 <% if signed_in? %>
-<h1 class="alert">Poznaj nasz wspaniały zespół!</h1>
+<div><h1 class="alert">Poznaj nasz wspaniały zespół!</h1></div>
     <% @doctor.each do |s| %>
-        <div class="lekarz_dane"><%= s.name %> - <%= s.specialization %></div>
-        <div class="lekarz opis"><%= s.info %></div>
+        <div class="lekarz">
+            <h3><%= s.name %></h3><%= s.specialization %>
+            <%= s.info %>
+            <%= button_to 'Umów wizytę', appointments_path %>
+        </div>
     <% end %>
 <% else %>
     <h2 class="alert">Zaloguj się by wyświetlić lekarzy</h2>
